@@ -1,14 +1,14 @@
-name: Hello Worldnaul!
+name: Hello World!
 
 on:
   push:
     branches:
-     -main
+      - main
 
 jobs:
   hello_world_job:
     runs-on: windows-latest
     steps:
-      - name: say hello
+      - name: Say hello
         run: |
-          echo "Hello Worldnaul"
+          Write-Output "Hello World!"
