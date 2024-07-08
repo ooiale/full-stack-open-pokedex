@@ -11,4 +11,8 @@ jobs:
     steps:
       - name: Say hello
         run: |
-          Write-Output "Hello World!"
+          echo "Hello World!"
+        run: |
+          date
+        run: |
+          lc -l
