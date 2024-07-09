@@ -28,6 +28,6 @@ jobs:
         run: npx playwright install 
       - name: Run Playwright tests
         run: npm run test:e2e
-      if: ${{ github.event_name == 'push' }}
-        - name: Trigger deployment to render
-          run: curl https://api.render.com/deploy/srv-${{ secrets.RENDER_SERVICE_ID }}?key=${{ secrets.RENDER_API_KEY }}
+      - name: Trigger deployment to render
+        if: ${{ github.event_name == 'push' }}
+        run: curl https://api.render.com/deploy/srv-${{ secrets.RENDER_SERVICE_ID }}?key=${{ secrets.RENDER_API_KEY }}
