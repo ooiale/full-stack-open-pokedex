@@ -5,25 +5,21 @@ echo "Build script starting"
 # Install dependencies
 echo "Installing dependencies..."
 npm install
-if ($?) {
-  echo "Dependencies installed successfully"
-} else {
+if [ $? -ne 0 ]; then
   echo "Failed to install dependencies"
   exit 1
-}
+fi
 
 # Build the project
 echo "Building the project..."
 npm run build
-if ($?) {
-  echo "Build successful"
-} else {
+if [ $? -ne 0 ]; then
   echo "Build failed"
   exit 1
-}
+fi
 
 # List files in the build directory to confirm the build output
 echo "Listing build directory contents..."
-Get-ChildItem -Path .\build
+ls -la build
 
 echo "Build script finished"
