@@ -53,7 +53,7 @@ jobs:
       if: success()
       with:
         severity: info
-        details: Test succeeded
+        details: Test success
         webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
     - name: Test Fail
       uses: rjstone/discord-webhook-notify@v1
